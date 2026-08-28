@@ -1,0 +1,138 @@
+.hiw {
+  background: var(--clr-surface);
+  position: relative;
+}
+
+.hiw__header {
+  text-align: center;
+  margin-bottom: var(--sp-80);
+}
+
+.hiw__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hiw__subtitle {
+  color: var(--clr-muted);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Steps layout – 3 equal columns */
+.hiw__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 24px;
+  position: relative;
+}
+
+/* Arrow connectors rendered as absolute overlays via sibling selector */
+.hiw__step {
+  background: var(--grad-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-24);
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: transform var(--dur-mid) var(--ease),
+              border-color var(--dur-mid) var(--ease);
+}
+
+.hiw__step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--grad-primary);
+  border-radius: var(--r-24) var(--r-24) 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+/* Arrow connector after each non-last step */
+.hiw__step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--clr-primary);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hiw__step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(145,111,76,0.5);
+}
+
+.hiw__step:hover::before {
+  transform: scaleX(1);
+}
+
+.hiw__step-number {
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(145,111,76,0.2);
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  user-select: none;
+}
+
+.hiw__step-icon {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hiw__step-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: var(--clr-white);
+}
+
+.hiw__step-desc {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.65;
+}
+
+/* Hide the old connector divs (kept in JSX for safety) */
+.hiw__connector {
+  display: none;
+}
+
+/* CTA */
+.hiw__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hiw__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw__step:not(:last-child)::after {
+    content: '↓';
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -22px;
+    transform: translateX(-50%);
+  }
+}

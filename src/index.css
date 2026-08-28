@@ -1,0 +1,237 @@
+/* =====================================================
+   NelsonReel – Royal Brown Design System
+   Derived from Ready2Reel design tokens
+   Colour adaptation: primary #ff2500 → #7a2000 (royal brown)
+   via HSL: hsl(9,100%,50%) → hsl(16,100%,24%)
+   secondary #ff6a00 → #a04010 hsl(23,100%,35%)
+   accent #009415 → #d4a020 hsl(43,100%,42%) [golden amber]
+===================================================== */
+
+:root {
+  /* ── Royal Brown Palette ── */
+  --clr-primary:       #99744e;   /* premium royal brown */
+  --clr-primary-light: #a68665;   /* lighter premium brown */
+  --clr-secondary:     #a04010;   /* sienna brown       – derived from #ff6a00 */
+  --clr-accent:        #d4a020;   /* golden amber       – derived from #009415 hue→43° */
+  --clr-accent-light:  #f0c84a;   /* bright gold        – accent lightened +15% L */
+
+  /* ── Neutrals (kept from brand) ── */
+  --clr-white:         #ffffff;
+  --clr-muted:         #b3b3b3;
+  --clr-black:         #000000;
+  --clr-bg-darkest:    #0a0a0a;
+  --clr-bg-dark:       #171717;
+  --clr-bg-card:       #222222;
+
+  /* ── Warm Tinted Surfaces ── */
+  --clr-surface:       #1a1008;   /* note: #0a0a0a + brown tint for warmth */
+  --clr-surface-2:     #241508;   /* slightly lighter warm dark */
+  --clr-surface-3:     #2e1a0a;   /* card background warm dark */
+  --clr-border:        #3d2510;   /* subtle warm brown border */
+
+  /* ── Gradients ── */
+  --grad-primary:      linear-gradient(135deg, #7a2000 0%, #a04010 100%);
+  --grad-gold:         linear-gradient(135deg, #d4a020 0%, #f0c84a 100%);
+  --grad-hero:         linear-gradient(135deg, #0a0602 0%, #1a1008 50%, #2e1a0a 100%);
+  --grad-glow:         radial-gradient(ellipse at 50% 0%, rgba(153,116,78,0.4) 0%, transparent 70%);
+  --grad-card:         linear-gradient(145deg, #2e1a0a 0%, #1a1008 100%);
+
+  /* ── Typography ── */
+  --font-display:      'Bebas Neue', sans-serif;
+  --font-body:         'Poppins', sans-serif;
+  --fs-base:           16px;
+
+  /* ── Spacing Scale ── */
+  --sp-2:    2px;
+  --sp-80:   80px;
+  --sp-96:   96px;
+  --sp-112:  112px;
+  --sp-128:  128px;
+  --sp-144:  144px;
+  --sp-192:  192px;
+
+  /* ── Border Radii ── */
+  --r-8:   8px;
+  --r-12:  12px;
+  --r-16:  16px;
+  --r-24:  24px;
+  --r-32:  32px;
+  --r-40:  40px;
+
+  /* ── Motion ── */
+  --dur-fast:   150ms;
+  --dur-mid:    300ms;
+  --dur-slow:   500ms;
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 400;
+  background-color: var(--clr-surface);
+  color: var(--clr-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, video { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+ul, ol { list-style: none; }
+
+/* ── Utility ── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-pad {
+  padding: var(--sp-96) 0;
+}
+
+.display-font {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.grad-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur-mid) var(--ease),
+              opacity var(--dur-fast) var(--ease);
+  border-radius: var(--r-8);
+  padding: 14px 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--grad-primary);
+  color: var(--clr-white);
+  box-shadow: 0 4px 24px rgba(153,116,78,0.45);
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 40px rgba(153,116,78,0.65);
+}
+
+.btn-gold {
+  background: var(--grad-gold);
+  color: var(--clr-black);
+  box-shadow: 0 4px 24px rgba(212,160,32,0.35);
+}
+.btn-gold:hover {
+  box-shadow: 0 8px 40px rgba(212,160,32,0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--clr-white);
+  border: 1.5px solid var(--clr-border);
+}
+.btn-outline:hover {
+  border-color: var(--clr-primary-light);
+  background: rgba(153,116,78,0.1);
+}
+
+/* ── Section Labels ── */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  background: rgba(212,160,32,0.1);
+  border: 1px solid rgba(212,160,32,0.3);
+  border-radius: var(--r-40);
+  padding: 4px 14px;
+  margin-bottom: 16px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-surface); }
+::-webkit-scrollbar-thumb {
+  background: var(--clr-primary);
+  border-radius: 3px;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(153,116,78,0.4); }
+  50%       { box-shadow: 0 0 50px rgba(153,116,78,0.8); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-fade-up {
+  animation: fadeUp var(--dur-slow) var(--ease) both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  :root { --fs-base: 15px; }
+  .section-pad { padding: var(--sp-80) 0; }
+}
