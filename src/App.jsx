@@ -13,16 +13,17 @@ import { WhatsAppProvider } from './context/WhatsAppContext'
 import WhatsAppModal from './components/WhatsAppModal'
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
+  const [showLoadingScreen, setShowLoadingScreen] = useState(true)
 
+  // 1. Wait for video to load (or failsafe timeout), then start exit animation
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
+    if (isVideoLoaded) {
       setIsExiting(true)
       
-      setTimeout(() => {
-        setLoading(false)
+      const timer = setTimeout(() => {
+        setShowLoadingScreen(false)
         
         // Initialize AOS after loading screen is gone
         if (window.AOS) {
@@ -35,30 +36,39 @@ export default function App() {
           })
         }
       }, 500) // matches CSS transition time
-    }, 1500)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isVideoLoaded])
 
-    return () => clearTimeout(timer)
-  }, [])
+  // 2. Failsafe: if video takes longer than 4 seconds, just show the site anyway
+  useEffect(() => {
+    const failsafe = setTimeout(() => {
+      if (!isVideoLoaded) {
+        setIsVideoLoaded(true)
+      }
+    }, 4000)
+    return () => clearTimeout(failsafe)
+  }, [isVideoLoaded])
 
   return (
     <WhatsAppProvider>
-      {loading && <LoadingScreen isExiting={isExiting} />}
-      {!loading && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <Services />
-            <HowItWorks />
-            <Features />
-            <Portfolio />
-            <Testimonials />
-            <CTA />
-          </main>
-          <Footer />
-          <WhatsAppModal />
-        </>
-      )}
+      {showLoadingScreen && <LoadingScreen isExiting={isExiting} />}
+      
+      {/* Render content immediately behind loading screen so video can buffer */}
+      <Navbar />
+      <main>
+        <Hero onVideoLoaded={() => setIsVideoLoaded(true)} />
+        <Services />
+        <HowItWorks />
+        <Features />
+        <Portfolio />
+        <Testimonials />
+        <CTA />
+      </main>
+      <Footer />
+      <WhatsAppModal />
     </WhatsAppProvider>
   )
 }
+

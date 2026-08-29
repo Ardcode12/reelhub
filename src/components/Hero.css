@@ -365,7 +365,8 @@
 }
 
 .hero__visual--mobile .hero__phone-shell {
-  width: 260px !important;
+  width: 100% !important;
+  max-width: 360px !important;
 }
 
 /* ─── Mute / Unmute Button ──────────────────────── */

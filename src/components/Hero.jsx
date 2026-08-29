@@ -4,7 +4,7 @@ import './Hero.css'
 import reelVideo from '../images/reel_home.mov'
 import phoneFrame from '../images/mbframe.png'
 
-export default function Hero() {
+export default function Hero({ onVideoLoaded }) {
   const { openWhatsAppModal } = useWhatsApp()
   const [muted, setMuted] = useState(true)
 
@@ -72,7 +72,7 @@ export default function Hero() {
 
         {/* Right Visual — Phone Mockup (desktop) */}
         <div className="hero__visual hero__visual--desktop" data-aos="fade-left" data-aos-delay="300">
-          <PhoneMockup muted={muted} setMuted={setMuted} />
+          <PhoneMockup muted={muted} setMuted={setMuted} onVideoLoaded={onVideoLoaded} />
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
   )
 }
 
-function PhoneMockup({ muted, setMuted }) {
+function PhoneMockup({ muted, setMuted, onVideoLoaded }) {
   return (
     <div className="hero__phone" id="hero-reel">
 
@@ -152,13 +152,14 @@ function PhoneMockup({ muted, setMuted }) {
           autoPlay
           loop
           playsInline
+          onLoadedData={onVideoLoaded}
           className="hero__phone-video"
           style={{
             top:          '6%',
             left:         '21%',
             width:        '60%',
             height:       '89%',
-            borderRadius: '34px',
+            borderRadius: '6% / 4%',
           }}
         >
           <source src={reelVideo} type="video/mp4" />
