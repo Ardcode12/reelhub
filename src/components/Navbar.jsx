@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react'
 import logo from '../images/IMG_5717.png'
+import { useWhatsApp } from '../context/WhatsAppContext'
 import './Navbar.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { openWhatsAppModal } = useWhatsApp()
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', handler)
-    return () => window.removeEventListener('scroll', handler)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -21,25 +25,22 @@ export default function Navbar() {
         </a>
 
         {/* Nav Links */}
-        <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`} id="nav-links">
-          {['Services', 'How It Works', 'Pricing', 'Testimonials'].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                className="navbar__link"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+          <a href="#services" className="navbar__link" onClick={() => setMenuOpen(false)}>Services</a>
+          <a href="#how-it-works" className="navbar__link" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="#pricing" className="navbar__link" onClick={() => setMenuOpen(false)}>Pricing</a>
+          <a href="#testimonials" className="navbar__link" onClick={() => setMenuOpen(false)}>Testimonials</a>
+        </div>
 
         {/* CTA */}
         <div className="navbar__actions">
-          <a href="https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20interested%20in%20getting%20started." target="_blank" rel="noopener noreferrer" className="btn btn-primary navbar__cta" id="nav-cta">
+          <button 
+            onClick={() => openWhatsAppModal("Hi ReelHub! I'm interested in getting started.")}
+            className="btn btn-primary navbar__cta" 
+            id="nav-cta"
+          >
             Get Started
-          </a>
+          </button>
           <button
             className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}

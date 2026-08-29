@@ -29,12 +29,16 @@ export default function Hero() {
           </p>
 
           <div className="hero__ctas" data-aos="fade-up" data-aos-delay="550">
-            <a href="https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20ready%20to%20get%20my%20reel%20started." target="_blank" rel="noopener noreferrer" className="btn btn-primary" id="hero-cta-primary">
+            <button 
+              onClick={() => openWhatsAppModal("Hi ReelHub! I'm ready to get my reel started.")} 
+              className="btn btn-primary" 
+              id="hero-cta-primary"
+            >
               <span>Get Your Reel</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 1l7 7-7 7M1 8h14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
               </svg>
-            </a>
+            </button>
             <a href="#how-it-works" className="btn btn-outline" id="hero-cta-secondary">
               See How It Works
             </a>

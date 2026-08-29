@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useWhatsApp } from '../context/WhatsAppContext'
 import './Pricing.css'
 
 const plans = [
@@ -58,6 +59,7 @@ const plans = [
 ]
 
 export default function Pricing() {
+  const { openWhatsAppModal } = useWhatsApp()
   const [yearly, setYearly] = useState(false)
 
   return (
@@ -124,14 +126,13 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={`https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20interested%20in%20purchasing%20the%20${plan.name}%20plan%20(${yearly ? 'Yearly' : 'Monthly'}).`}
-                target="_blank" rel="noopener noreferrer"
+              <button
+                onClick={() => openWhatsAppModal(`Hi ReelHub! I'm interested in purchasing the ${plan.name} plan (${yearly ? 'Yearly' : 'Monthly'}).`)}
                 className={`btn ${plan.highlight ? 'btn-gold' : 'btn-primary'} pricing-card__cta`}
                 id={`${plan.id}-cta`}
               >
                 {plan.cta}
-              </a>
+              </button>
             </div>
           ))}
         </div>

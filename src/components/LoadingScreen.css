@@ -23,12 +23,9 @@
 }
 
 .loading-screen__logo {
-  height: 140px;
+  height: 80px;
   width: auto;
   animation: pulse-glow 2s ease-in-out infinite;
-  background-color: var(--clr-white);
-  padding: 16px 32px;
-  border-radius: var(--r-12);
 }
 
 .loading-screen__spinner {

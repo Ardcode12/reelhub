@@ -37,12 +37,9 @@
 .navbar__logo:hover { opacity: 0.85; }
 
 .navbar__logo-img {
-  height: 80px;
+  height: 48px;
   width: auto;
   object-fit: contain;
-  background-color: var(--clr-white);
-  padding: 8px 16px;
-  border-radius: var(--r-8);
 }
 
 /* Nav Links */
