@@ -86,7 +86,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="hiw__cta" data-aos="fade-up" data-aos-delay="200">
-          <a href="#pricing" className="btn btn-primary" id="hiw-cta">
+          <a href="https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20ready%20to%20start%20my%20reel." target="_blank" rel="noopener noreferrer" className="btn btn-primary" id="hiw-cta">
             Start Your Reel Now
           </a>
         </div>

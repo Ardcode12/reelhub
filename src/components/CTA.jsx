@@ -21,7 +21,7 @@ export default function CTA() {
           creation feels like — your audience will feel the difference.
         </p>
         <div className="cta-section__actions" data-aos="fade-up" data-aos-delay="400">
-          <a href="#pricing" className="btn btn-gold cta-section__primary" id="cta-primary">
+          <a href="https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20ready%20to%20get%20my%20first%20reel." target="_blank" rel="noopener noreferrer" className="btn btn-gold cta-section__primary" id="cta-primary">
             <span>Get Your First Reel</span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>

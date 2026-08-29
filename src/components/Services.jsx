@@ -94,7 +94,8 @@ export default function Services() {
                 ))}
               </ul>
               <a
-                href="#pricing"
+                href={`https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20interested%20in%20your%20${s.title}%20service.`}
+                target="_blank" rel="noopener noreferrer"
                 className={`btn ${s.featured ? 'btn-gold' : 'btn-primary'} service-card__cta`}
               >
                 {s.cta}

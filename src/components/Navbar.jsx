@@ -37,7 +37,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="navbar__actions">
-          <a href="#pricing" className="btn btn-primary navbar__cta" id="nav-cta">
+          <a href="https://wa.me/910000000000?text=Hi%20ReelHub!%20I'm%20interested%20in%20getting%20started." target="_blank" rel="noopener noreferrer" className="btn btn-primary navbar__cta" id="nav-cta">
             Get Started
           </a>
           <button
