@@ -21,11 +21,13 @@
   margin-bottom: 16px;
 }
 
-.footer__logo-accent {
-  background: var(--grad-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.footer__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  background-color: var(--clr-white);
+  padding: 4px 10px;
+  border-radius: var(--r-8);
 }
 
 .footer__tagline {

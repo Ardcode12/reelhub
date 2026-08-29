@@ -24,8 +24,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero__subtitle" data-aos="fade-up" data-aos-delay="450">
-            Get your cinematic reels delivered in quick steps — royal craft,
-            unmatched quality. See what we create for creators who demand excellence.
+            Shoots made on iPhone for individuals, families, corporate events & promotions. 
+            Edits done effectively within hours and delivered to the client before the demanded time for the output.
           </p>
 
           <div className="hero__ctas" data-aos="fade-up" data-aos-delay="550">
@@ -66,8 +66,8 @@ export default function Hero() {
               <div className="hero__reel-screen">
                 <div className="hero__reel-play">
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <circle cx="20" cy="20" r="19" stroke="#d4a020" strokeWidth="1.5"/>
-                    <path d="M15 12 L30 20 L15 28 Z" fill="#99744e"/>
+                    <circle cx="20" cy="20" r="19" stroke="#ff5a00" strokeWidth="1.5"/>
+                    <path d="M15 12 L30 20 L15 28 Z" fill="#ff5a00"/>
                   </svg>
                 </div>
                 <div className="hero__reel-bars">
@@ -124,13 +124,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="hero__scroll">
-        <div className="hero__scroll-mouse">
-          <div className="hero__scroll-dot" />
-        </div>
-        <span>Scroll to Explore</span>
-      </div>
+      
     </section>
   )
 }

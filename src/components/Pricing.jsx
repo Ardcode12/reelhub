@@ -5,7 +5,7 @@ const plans = [
   {
     id: 'plan-starter',
     name: 'Starter',
-    price: { monthly: 49, yearly: 39 },
+    price: { monthly: '3,999', yearly: '2,999' },
     desc: 'Perfect for creators just getting started with social reels.',
     features: [
       '3 Reels per month',
@@ -19,10 +19,10 @@ const plans = [
     highlight: false,
   },
   {
-    id: 'plan-royal',
-    name: 'Royal',
-    price: { monthly: 129, yearly: 99 },
-    desc: 'Our most popular plan for serious creators who demand royal quality.',
+    id: 'plan-premium',
+    name: 'Premium',
+    price: { monthly: '9,999', yearly: '7,999' },
+    desc: 'Our most popular plan for serious creators who demand premium quality.',
     features: [
       '10 Reels per month',
       'Up to 3 minutes each',
@@ -33,14 +33,14 @@ const plans = [
       'Music licensing included',
       'Priority support',
     ],
-    cta: 'Get Royal',
+    cta: 'Get Premium',
     highlight: true,
     badge: 'Most Popular',
   },
   {
     id: 'plan-empire',
     name: 'Empire',
-    price: { monthly: 299, yearly: 249 },
+    price: { monthly: '24,999', yearly: '19,999' },
     desc: 'Full-service brand reel suite for agencies and enterprise clients.',
     features: [
       'Unlimited Reels',
@@ -67,11 +67,11 @@ export default function Pricing() {
           <span className="eyebrow">Pricing</span>
           <h2 className="pricing__title display-font">
             Which Plan Fits<br />
-            <span className="gold-text">Your Crown?</span>
+            <span className="gold-text">Your Vision?</span>
           </h2>
           <p className="pricing__subtitle">
             Tap the right plan and get your reels rolling. No hidden fees,
-            no royal decrees — just clear, honest pricing.
+            no surprise decrees — just clear, honest pricing.
           </p>
 
           {/* Toggle */}
@@ -108,7 +108,7 @@ export default function Pricing() {
               </div>
 
               <div className="pricing-card__price">
-                <span className="pricing-card__currency">$</span>
+                <span className="pricing-card__currency">₹</span>
                 <span className="pricing-card__amount">
                   {yearly ? plan.price.yearly : plan.price.monthly}
                 </span>

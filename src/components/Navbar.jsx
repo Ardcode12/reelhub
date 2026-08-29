@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logo from '../images/IMG_5717.png'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -16,34 +17,7 @@ export default function Navbar() {
       <div className="container navbar__inner">
         {/* Logo */}
         <a href="#" className="navbar__logo" id="logo-link">
-          <span className="navbar__logo-icon">
-            {/* Professional film reel icon */}
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Outer ring */}
-              <circle cx="18" cy="18" r="16.5" stroke="#d4a020" strokeWidth="1.5"/>
-              {/* Inner hub */}
-              <circle cx="18" cy="18" r="5" fill="#916f4c" stroke="#d4a020" strokeWidth="1"/>
-              {/* Sprocket holes – 6 evenly spaced */}
-              <circle cx="18" cy="5"  r="2" fill="#d4a020" opacity="0.85"/>
-              <circle cx="29.59" cy="11.5" r="2" fill="#d4a020" opacity="0.85"/>
-              <circle cx="29.59" cy="24.5" r="2" fill="#d4a020" opacity="0.85"/>
-              <circle cx="18" cy="31" r="2" fill="#d4a020" opacity="0.85"/>
-              <circle cx="6.41"  cy="24.5" r="2" fill="#d4a020" opacity="0.85"/>
-              <circle cx="6.41"  cy="11.5" r="2" fill="#d4a020" opacity="0.85"/>
-              {/* Spokes from centre to sprocket holes */}
-              <line x1="18" y1="13" x2="18" y2="7"    stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              <line x1="18" y1="13" x2="27.59" y2="12.5" stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              <line x1="18" y1="13" x2="27.59" y2="23.5" stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              <line x1="18" y1="23" x2="18" y2="29"   stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              <line x1="18" y1="23" x2="8.41"  y2="23.5"  stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              <line x1="18" y1="13" x2="8.41"  y2="12.5"  stroke="#916f4c" strokeWidth="1" opacity="0.6"/>
-              {/* Golden centre dot */}
-              <circle cx="18" cy="18" r="2" fill="#d4a020"/>
-            </svg>
-          </span>
-          <span className="navbar__logo-text">
-            Nelson<span className="navbar__logo-reel">Reel</span>
-          </span>
+          <img src={logo} alt="ReelHub Logo" className="navbar__logo-img" />
         </a>
 
         {/* Nav Links */}

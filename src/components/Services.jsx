@@ -31,7 +31,7 @@ const services = [
     ),
     tag: 'Premium',
     title: 'Cinematic Reels',
-    desc: 'Tap into a royal cinematic experience. Full colour-grade, custom soundtrack, and premium motion graphics included.',
+    desc: 'Tap into a premium cinematic experience. Full colour-grade, custom soundtrack, and premium motion graphics included.',
     features: ['4K / HDR export', 'Colour grading suite', 'Motion graphic overlays'],
     cta: 'Get Cinematic',
     featured: true,
@@ -59,7 +59,7 @@ export default function Services() {
         <div className="services__header" data-aos="fade-up">
           <span className="eyebrow">What We Craft</span>
           <h2 className="services__title display-font">
-            Royal Reel Services<br />
+            Premium Reel Services<br />
             <span className="gold-text">Built For You</span>
           </h2>
           <p className="services__subtitle">

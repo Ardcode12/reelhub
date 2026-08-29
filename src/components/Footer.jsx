@@ -1,3 +1,4 @@
+import logo from '../images/IMG_5717.png'
 import './Footer.css'
 
 const links = {
@@ -13,18 +14,13 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer__brand">
           <div className="footer__logo">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="15" stroke="#d4a020" strokeWidth="1.5"/>
-              <path d="M10 10 L22 16 L10 22 Z" fill="#916f4c"/>
-              <circle cx="16" cy="16" r="4" fill="#d4a020" opacity="0.3"/>
-            </svg>
-            <span className="footer__logo-text">
-              Nelson<span className="footer__logo-accent">Reel</span>
-            </span>
+            <img src={logo} alt="ReelHub Logo" className="footer__logo-img" />
           </div>
           <p className="footer__tagline">
-            Royal reel creation for creators who refuse to settle.
+            Premium reel creation for creators who refuse to settle.
             Quick delivery, cinematic quality, every time.
+            <br/><br/>
+            Contact us: <a href="mailto:reelhubcbe@gmail.com" style={{color: 'var(--clr-primary)'}}>reelhubcbe@gmail.com</a>
           </p>
           <div className="footer__socials">
             {['Instagram', 'TikTok', 'YouTube', 'X'].map((s) => (
@@ -53,7 +49,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copy">
-            © {new Date().getFullYear()} NelsonReel. All rights reserved.
+            © {new Date().getFullYear()} ReelHub. All rights reserved.
           </p>
           <div className="footer__legal">
             <a href="#">Privacy Policy</a>

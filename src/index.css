@@ -8,12 +8,12 @@
 ===================================================== */
 
 :root {
-  /* ── Royal Brown Palette ── */
-  --clr-primary:       #99744e;   /* premium royal brown */
-  --clr-primary-light: #a68665;   /* lighter premium brown */
-  --clr-secondary:     #a04010;   /* sienna brown       – derived from #ff6a00 */
-  --clr-accent:        #d4a020;   /* golden amber       – derived from #009415 hue→43° */
-  --clr-accent-light:  #f0c84a;   /* bright gold        – accent lightened +15% L */
+  /* ── ReelHub Palette ── */
+  --clr-primary:       #ff5a00;   /* ReelHub Orange */
+  --clr-primary-light: #ff7a33;   /* lighter orange */
+  --clr-secondary:     #e04f00;   /* darker orange */
+  --clr-accent:        #ff5a00;   /* accent orange */
+  --clr-accent-light:  #ff7a33;   /* light accent */
 
   /* ── Neutrals (kept from brand) ── */
   --clr-white:         #ffffff;
@@ -23,18 +23,18 @@
   --clr-bg-dark:       #171717;
   --clr-bg-card:       #222222;
 
-  /* ── Warm Tinted Surfaces ── */
-  --clr-surface:       #1a1008;   /* note: #0a0a0a + brown tint for warmth */
-  --clr-surface-2:     #241508;   /* slightly lighter warm dark */
-  --clr-surface-3:     #2e1a0a;   /* card background warm dark */
-  --clr-border:        #3d2510;   /* subtle warm brown border */
+  /* ── Dark Surfaces ── */
+  --clr-surface:       #0a0a0a;   /* true dark background */
+  --clr-surface-2:     #111111;   /* slightly lighter dark */
+  --clr-surface-3:     #1a1a1a;   /* card background dark */
+  --clr-border:        #333333;   /* subtle border */
 
   /* ── Gradients ── */
-  --grad-primary:      linear-gradient(135deg, #7a2000 0%, #a04010 100%);
-  --grad-gold:         linear-gradient(135deg, #d4a020 0%, #f0c84a 100%);
-  --grad-hero:         linear-gradient(135deg, #0a0602 0%, #1a1008 50%, #2e1a0a 100%);
-  --grad-glow:         radial-gradient(ellipse at 50% 0%, rgba(153,116,78,0.4) 0%, transparent 70%);
-  --grad-card:         linear-gradient(145deg, #2e1a0a 0%, #1a1008 100%);
+  --grad-primary:      linear-gradient(135deg, #ff5a00 0%, #e04f00 100%);
+  --grad-gold:         linear-gradient(135deg, #ff5a00 0%, #ff7a33 100%);
+  --grad-hero:         linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  --grad-glow:         radial-gradient(ellipse at 50% 0%, rgba(255,90,0,0.4) 0%, transparent 70%);
+  --grad-card:         linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
 
   /* ── Typography ── */
   --font-display:      'Bebas Neue', sans-serif;
@@ -148,19 +148,19 @@ ul, ol { list-style: none; }
 .btn-primary {
   background: var(--grad-primary);
   color: var(--clr-white);
-  box-shadow: 0 4px 24px rgba(153,116,78,0.45);
+  box-shadow: 0 4px 24px rgba(255,90,0,0.45);
 }
 .btn-primary:hover {
-  box-shadow: 0 8px 40px rgba(153,116,78,0.65);
+  box-shadow: 0 8px 40px rgba(255,90,0,0.65);
 }
 
 .btn-gold {
   background: var(--grad-gold);
-  color: var(--clr-black);
-  box-shadow: 0 4px 24px rgba(212,160,32,0.35);
+  color: var(--clr-white);
+  box-shadow: 0 4px 24px rgba(255,90,0,0.35);
 }
 .btn-gold:hover {
-  box-shadow: 0 8px 40px rgba(212,160,32,0.55);
+  box-shadow: 0 8px 40px rgba(255,90,0,0.55);
 }
 
 .btn-outline {
@@ -181,8 +181,8 @@ ul, ol { list-style: none; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--clr-accent);
-  background: rgba(212,160,32,0.1);
-  border: 1px solid rgba(212,160,32,0.3);
+  background: rgba(255,90,0,0.1);
+  border: 1px solid rgba(255,90,0,0.3);
   border-radius: var(--r-40);
   padding: 4px 14px;
   margin-bottom: 16px;
@@ -213,8 +213,8 @@ ul, ol { list-style: none; }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(153,116,78,0.4); }
-  50%       { box-shadow: 0 0 50px rgba(153,116,78,0.8); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255,90,0,0.4); }
+  50%       { box-shadow: 0 0 50px rgba(255,90,0,0.8); }
 }
 
 @keyframes shimmer {

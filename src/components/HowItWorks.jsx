@@ -28,7 +28,7 @@ const steps = [
       </svg>
     ),
     title: 'We Craft Your Reel',
-    desc: 'Our royal editors get to work — colour-grading, syncing, and refining every frame to match your brief with precision.',
+    desc: 'Our premium editors get to work — colour-grading, syncing, and refining every frame to match your brief with precision.',
   },
   {
     id: 'step-deliver',
@@ -56,7 +56,7 @@ export default function HowItWorks() {
           </h2>
           <p className="hiw__subtitle">
             Which path to your perfect reel? All three steps are built for speed
-            without sacrificing an ounce of royal quality.
+            without sacrificing an ounce of premium quality.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function HowItWorks() {
                 <div className="hiw__connector">
                   <div className="hiw__connector-line" />
                   <svg className="hiw__connector-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M1 6h10M7 2l4 4-4 4" stroke="#916f4c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 6h10M7 2l4 4-4 4" stroke="#ff5a00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
               )}

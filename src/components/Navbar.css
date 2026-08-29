@@ -36,17 +36,13 @@
 }
 .navbar__logo:hover { opacity: 0.85; }
 
-.navbar__logo-icon {
-  display: flex;
-  align-items: center;
-  animation: float 4s ease-in-out infinite;
-}
-
-.navbar__logo-reel {
-  background: var(--grad-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.navbar__logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  background-color: var(--clr-white);
+  padding: 8px 16px;
+  border-radius: var(--r-8);
 }
 
 /* Nav Links */

@@ -11,9 +11,9 @@ export default function CTA() {
             <path d="M2 21h20"></path>
           </svg>
         </div>
-        <span className="eyebrow" data-aos="fade-up" data-aos-delay="100">Ready to Reign?</span>
+        <span className="eyebrow" data-aos="fade-up" data-aos-delay="100">Ready to Rise?</span>
         <h2 className="cta-section__title display-font" data-aos="fade-up" data-aos-delay="200">
-          Your Royal Reel<br />
+          Your Premium Reel<br />
           <span className="gold-text">Awaits You</span>
         </h2>
         <p className="cta-section__subtitle" data-aos="fade-up" data-aos-delay="300">

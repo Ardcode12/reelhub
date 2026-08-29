@@ -7,7 +7,7 @@ const testimonials = [
     handle: '@aria.creates',
     avatar: 'AK',
     role: 'Fashion Creator · 280K Followers',
-    text: 'NelsonReel completely transformed my content game. The royal brown aesthetic they nailed was exactly what my brand needed. Delivered in 36 hours — absolutely flawless.',
+    text: 'ReelHub completely transformed my content game. The premium aesthetic they nailed was exactly what my brand needed. Delivered in 36 hours — absolutely flawless.',
     rating: 5,
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     handle: '@marcusstone',
     avatar: 'MS',
     role: 'Brand Director · StoneHouse Agency',
-    text: 'We\'ve tried five different reel services. None come close to NelsonReel\'s quality. The cinematic grade on our brand campaign reels is unmatched. Pure royalty.',
+    text: 'We\'ve tried five different reel services. None come close to ReelHub\'s quality. The cinematic grade on our brand campaign reels is unmatched. Pure excellence.',
     rating: 5,
     featured: true,
   },
@@ -26,7 +26,7 @@ const testimonials = [
     handle: '@priyamehta.co',
     avatar: 'PM',
     role: 'Lifestyle Creator · 95K Followers',
-    text: 'How did I survive without NelsonReel? The 48-hour delivery is real, the revisions were smooth, and my engagement tripled on the first reel they delivered.',
+    text: 'How did I survive without ReelHub? The 48-hour delivery is real, the revisions were smooth, and my engagement tripled on the first reel they delivered.',
     rating: 5,
   },
 ]
