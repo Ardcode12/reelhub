@@ -14,7 +14,7 @@ export default function WhatsAppModal() {
   };
 
   // Replace this with the actual phone number
-  const phoneNumber = '910000000000';
+  const phoneNumber = '918754090246';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
