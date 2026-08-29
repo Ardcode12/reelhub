@@ -4,7 +4,6 @@ import Hero from './components/Hero'
 import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
-import Portfolio from './components/Portfolio'
 import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
@@ -62,7 +61,6 @@ export default function App() {
         <Services />
         <HowItWorks />
         <Features />
-        <Portfolio />
         <Testimonials />
         <CTA />
       </main>
