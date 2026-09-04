@@ -34,13 +34,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="navbar__actions">
-          <button 
-            onClick={() => openWhatsAppModal("Hi ReelHub! I'm interested in getting started.")}
-            className="btn btn-primary navbar__cta" 
-            id="nav-cta"
-          >
-            Get Started
-          </button>
+        
           <button
             className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}

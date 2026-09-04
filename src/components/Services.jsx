@@ -134,12 +134,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => openWhatsAppModal(`Hi ReelHub! I'm interested in your ${s.title} service.`)}
-                className={`btn ${s.featured ? 'btn-gold' : 'btn-primary'} service-card__cta`}
-              >
-                {s.cta}
-              </button>
+
             </div>
           ))}
         </div>
