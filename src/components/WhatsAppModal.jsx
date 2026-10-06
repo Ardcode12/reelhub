@@ -31,6 +31,10 @@ export default function WhatsAppModal() {
           <p className="wa-modal__text">
             To ensure the fastest response and best personalized service, we handle all our project discussions and purchases directly through WhatsApp.
           </p>
+          <div className="wa-modal__direct-contact">
+            <span>Direct Number / WhatsApp:</span>
+            <a href="tel:+918754090246" className="wa-modal__phone-link">+91 87540 90246</a>
+          </div>
           <a
             href={whatsappUrl}
             target="_blank"

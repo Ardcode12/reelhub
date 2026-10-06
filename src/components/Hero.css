@@ -327,7 +327,7 @@
 
 
 
-/* ─── Phone Mockup ──────────────────────────────── */
+/* ─── Phone Mockup (matching Works section) ────── */
 .hero__phone {
   position: relative;
   display: flex;
@@ -335,69 +335,103 @@
   justify-content: center;
 }
 
-/* Container that holds both frame and video */
+/* Pure CSS phone shell — matching Works section layout */
 .hero__phone-shell {
   position: relative;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  aspect-ratio: 9 / 19.5;
+  border-radius: 36px;
+  border: 3px solid var(--clr-primary);
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.7),
+    0 0 32px rgba(255, 90, 0, 0.45);
+  transition:
+    box-shadow var(--dur-mid) var(--ease),
+    border-color var(--dur-mid) var(--ease);
 }
 
-/* VIDEO — on top (z-index 2), positioned inside the screen area */
+/* Notch at top */
+.hero__phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38%;
+  height: 20px;
+  background: #000;
+  border-radius: 0 0 14px 14px;
+  z-index: 4;
+}
+
+/* Video fills the entire phone shell edge-to-edge */
 .hero__phone-video {
   position: absolute;
-  object-fit: cover;
-  z-index: 2;
-}
-
-/* FRAME image — beneath the video (z-index 1) */
-.hero__phone-frame {
-  position: relative;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   z-index: 1;
-  pointer-events: none;
-}
-
-/* ─── Mobile Mockup Section ─────────────────────── */
-.hero__visual--mobile {
-  padding: 24px 16px 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero__visual--mobile .hero__phone-shell {
-  width: 100% !important;
-  max-width: 360px !important;
 }
 
 /* ─── Mute / Unmute Button ──────────────────────── */
 .hero__mute-btn {
   position: absolute;
-  bottom: 12%;
-  right: 6%;
-  z-index: 3;
+  bottom: 16px;
+  right: 14px;
+  z-index: 5;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .hero__mute-btn:hover {
   background: var(--clr-primary);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .hero__mute-btn--muted {
   background: rgba(255, 90, 0, 0.25);
   color: var(--clr-primary);
+  border-color: rgba(255, 90, 0, 0.4);
+}
+
+/* ─── Mobile Mockup Section ─────────────────────── */
+.hero__visual--mobile {
+  padding: 20px 16px 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero__visual--mobile .hero__phone-shell {
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+  border-radius: 36px;
+}
+
+@media (max-width: 480px) {
+  .hero__visual--mobile .hero__phone-shell {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+  }
 }
 
 @media (min-width: 901px) {

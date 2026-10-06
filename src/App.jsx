@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import Works from './components/Works'
 import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
 import Testimonials from './components/Testimonials'
@@ -59,6 +60,7 @@ export default function App() {
       <main>
         <Hero onVideoLoaded={() => setIsVideoLoaded(true)} />
         <Services />
+        <Works />
         <HowItWorks />
         <Features />
         <Testimonials />

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useWhatsApp } from '../context/WhatsAppContext'
 import './Hero.css'
 import reelVideo from '../images/reel_home.mov'
-import phoneFrame from '../images/mbframe.png'
 
 export default function Hero({ onVideoLoaded }) {
   const { openWhatsAppModal } = useWhatsApp()
@@ -89,36 +88,25 @@ function PhoneMockup({ muted, setMuted, onVideoLoaded }) {
   return (
     <div className="hero__phone" id="hero-reel">
 
-      {/* Floating badges */}
-      <div className="hero__badge hero__badge--1">
-        <span className="hero__badge-icon">
-          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-            <line x1="7" y1="2" x2="7" y2="22"></line>
-            <line x1="17" y1="2" x2="17" y2="22"></line>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-          </svg>
-        </span>
-        <div>
-          <p className="hero__badge-title">Cinematic</p>
-          <p className="hero__badge-sub">4K Quality</p>
-        </div>
-      </div>
 
-      <div className="hero__badge hero__badge--2">
-        <span className="hero__badge-icon">
-          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-          </svg>
-        </span>
-        <div>
-          <p className="hero__badge-title">Fast Delivery</p>
-          <p className="hero__badge-sub">48 Hours</p>
-        </div>
-      </div>
 
-      {/* Phone shell */}
-      <div className="hero__phone-shell" style={{ width: '500px' }}>
+
+
+      {/* CSS-only phone shell matching Works section */}
+      <div className="hero__phone-shell">
+        <div className="hero__phone-notch" />
+
+        <video
+          muted={muted}
+          autoPlay
+          loop
+          playsInline
+          onLoadedData={onVideoLoaded}
+          className="hero__phone-video"
+        >
+          <source src={reelVideo} type="video/mp4" />
+        </video>
+
         {/* Mute/Unmute button */}
         <button
           className={`hero__mute-btn ${muted ? 'hero__mute-btn--muted' : ''}`}
@@ -145,32 +133,6 @@ function PhoneMockup({ muted, setMuted, onVideoLoaded }) {
             </svg>
           )}
         </button>
-
-        {/* VIDEO — z-index 2, on top */}
-        <video
-          muted={muted}
-          autoPlay
-          loop
-          playsInline
-          onLoadedData={onVideoLoaded}
-          className="hero__phone-video"
-          style={{
-            top:          '6%',
-            left:         '21%',
-            width:        '60%',
-            height:       '89%',
-            borderRadius: '6% / 4%',
-          }}
-        >
-          <source src={reelVideo} type="video/mp4" />
-        </video>
-
-        {/* FRAME — z-index 1, below video */}
-        <img
-          src={phoneFrame}
-          alt="Phone frame"
-          className="hero__phone-frame"
-        />
       </div>
     </div>
   )
